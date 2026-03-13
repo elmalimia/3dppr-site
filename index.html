@@ -5,8 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>3dppr</title>
 </head>
+
 <body>
-  <h1>3dppr.com</h1>
-  <p>Сайт подключается к GitHub Pages.</p>
+
+<h1>3dppr.com</h1>
+<p>Сайт подключается к GitHub Pages.</p>
+
+<button onclick="checkServer()">Проверить backend</button>
+
+<p id="result"></p>
+
+<script>
+
+async function checkServer() {
+
+  const response = await fetch("https://threedppr-api.onrender.com");
+
+  const text = await response.text();
+
+  document.getElementById("result").innerText = text;
+
+}
+
+</script>
+
 </body>
 </html>
